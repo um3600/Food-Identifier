@@ -1,1 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Menu Checker</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 450px;
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            background: #28a745;
+            color: white;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background: #218838;
+        }
+
+        #result {
+            margin-top: 15px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>🍽 Food Menu Checker</h1>
+
+        <input type="text" id="food" placeholder="Enter food name">
+
+        <button onclick="checkFood()">Check Food</button>
+
+        <p id="result"></p>
+    </div>
+
+    <script>
+
+        var Menu = [
+            "Karahi", "Biryani", "Pulao", "Nihari", "Kofta", "Haleem",
+            "Chapli Kabab", "Seekh Kabab", "Shami Kabab",
+            "Chicken Tikka", "Chicken Malai Boti", "Chicken Reshmi Kabab",
+            "Chicken Behari Kabab", "Chicken Chapli Kabab", "Chicken Seekh Kabab",
+            "Chicken Shami Kabab", "Mutton Tikka", "Mutton Malai Boti",
+            "Mutton Reshmi Kabab", "Mutton Behari Kabab", "Mutton Chapli Kabab",
+            "Fish Tikka", "Fish Malai Boti", "Fish Reshmi Kabab",
+            "Prawn Tikka", "Prawn Malai Boti", "Prawn Reshmi Kabab"
+        ];
+
+        function checkFood() {
+
+            var khana = document.getElementById("food").value;
+            var result = document.getElementById("result");
+
+            if (Menu.includes(khana)) {
+                result.innerHTML = "✅ Chalo Andar Mil Jaye Ga";
+                result.style.color = "green";
+            }
+            else {
+                result.innerHTML = "❌ Chutti Kar Munne, Dish Menu Mein Nahi Hai";
+                result.style.color = "red";
+            }
+
+        }
+
+    </script>
+
+</body>
+
+</html>
